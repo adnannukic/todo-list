@@ -31,8 +31,11 @@ const item2 = new Item({
 const item3 = new Item({
     name: "Hit checkbox to delete an item"
 });
+const item4 = new Item ({
+    name: 'You can add a custom route to an existing URL and create your own "private" ToDo list. For example: add "private-list" -> https://frantic-worm-purse.cyclic.app/private-list'
+});
 
-const defaultItems = [item1, item2, item3];
+const defaultItems = [item1, item2, item3, item4];
 
 const listSchema = {
     name: String,
@@ -42,7 +45,6 @@ const listSchema = {
 const List = mongoose.model("List", listSchema)
 
 // "/" PAGE:
-
 app.get("/", function (req, res) {
 
     Item.find({}, function (err, items) {
